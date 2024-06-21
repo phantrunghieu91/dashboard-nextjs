@@ -13,6 +13,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const searchParamsRef = useRef('');
   const updateSearchUrl = useDebounce((term: string) => {
     const params = new URLSearchParams(searchParams);
+    params.set('page', '1');
     if (term) {
       params.set('query', term);
     } else {
